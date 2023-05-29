@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Card from '../../components/Card.astro'
+import Header from '../../components/Header.astro'
+import Hero from '../../components/Hero.astro'
+
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('tips')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+)
+---
+
+<Layout title="Posts Page">
+	<main class="m-auto p-6 max-w-[60ch]">
+		<Header title="Post Page" />
+		<Hero />
+		<ul role="list" class="grid link-card-grid">
+			{
+				posts.map((post) => (
+					<Card
+						title={post.data.title}
+						time={post.data.pubDate}
+						tags={post.data.tags}
+						slug={post.slug}
+					/>
+				))
+			}
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>

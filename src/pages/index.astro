@@ -4,12 +4,12 @@ import Card from '../components/Card.astro'
 import Header from '../components/Header.astro'
 import Hero from '../components/Hero.astro'
 
-const allPosts = await Astro.glob('../content/*.md')
+const allPosts = await Astro.glob('../content/tips/*.md')
 ---
 
-<Layout title="Layout title">
+<Layout title="Index Page">
 	<main class="m-auto p-6 max-w-[60ch]">
-		<Header title="Header Title" />
+		<Header title="Index Page" />
 		<Hero />
 		<ul role="list" class="grid link-card-grid">
 			{
