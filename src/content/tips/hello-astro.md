@@ -2,8 +2,9 @@
 title: 'Hello Astro'
 pubDate: 2023-02-25
 description: ' Hello this is my first recommendation'
-image:
+image: 'https://picsum.photos/776/360'
 tags: ['astro', 'javascript']
+layout: '../../layouts/Posts.astro'
 ---
 
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
